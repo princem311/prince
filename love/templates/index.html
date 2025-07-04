@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="hi">
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <title>Love Calculator ❤️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico.png">
+    <meta name="description" content="यह वेबसाइट प्रेम और सौहार्द का प्रतीक है, जहाँ दो सुंदर लव बर्ड्स स्नेह और साथ का भाव प्रकट करते हैं। यह डिज़ाइन प्यार की खूबसूरती और कोमलता को दर्शाता है।">
+</head>
+<body>
+    <div class="container">
+        <h1>💖 Love Calculator 💖</h1>
+        <form method="post">
+            <div class="input-box male">
+                <label>👨 लड़के का नाम:</label>
+                <input type="text" name="male_name" placeholder="राहुल" required>
+            </div>
+            <div class="input-box female">
+                <label>👩 लड़की का नाम:</label>
+                <input type="text" name="female_name" placeholder="सोनम" required>
+            </div>
+            <button type="submit">❤️ प्यार प्रतिशत निकालें</button>
+        </form>
+
+        {% if love %}
+        <div class="result">
+            <h2>{{ male_name }} ❤️ {{ female_name }}</h2>
+            <p>आपका प्यार प्रतिशत है: <strong>{{ love }}%</strong></p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
